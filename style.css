@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  height: 100svh;
+  width: 100svw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+#flyttmeg-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 10rem;
+  display: inline-block;
+  color: white;
+  background-color: black;
+}
