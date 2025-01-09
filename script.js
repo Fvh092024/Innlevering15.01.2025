@@ -1,4 +1,6 @@
 const flyttmeg = document.getElementById("flyttmeg-btn");
+const viewportWidth = window.innerWidth;
+const viewportHeight = window.innerHeight;
 
 // flyttmeg.setAttribute("tabindex", "0");
 // flyttmeg.focus();
@@ -13,16 +15,24 @@ flyttmeg.addEventListener("keydown", function (event) {
 
   switch (event.key) {
     case "ArrowUp":
-      flyttmeg.style.top = top - 10 + "px";
+      if (top - 10 >= 0) {
+        flyttmeg.style.top = top - 10 + "px";
+      }
       break;
     case "ArrowDown":
-      flyttmeg.style.top = top + 10 + "px";
+      if (top + 10 + flyttmeg.offsetHeight <= viewportHeight) {
+        flyttmeg.style.top = top + 10 + "px";
+      }
       break;
     case "ArrowLeft":
-      flyttmeg.style.left = left - 10 + "px";
+      if (left - 10 >= 0) {
+        flyttmeg.style.left = left - 10 + "px";
+      }
       break;
     case "ArrowRight":
-      flyttmeg.style.left = left + 10 + "px";
+      if (left + 10 + flyttmeg.offsetWidth <= viewportWidth) {
+        flyttmeg.style.left = left + 10 + "px";
+      }
       break;
   }
 });
@@ -30,6 +40,13 @@ document.addEventListener("click", function (event) {
   const mouseX = event.clientX;
   const mouseY = event.clientY;
 
-  flyttmeg.style.left = mouseX - flyttmeg.offsetWidth / 2 + "px";
-  flyttmeg.style.top = mouseY - flyttmeg.offsetHeight / 2 + "px";
+  const borderLeft = mouseX - flyttmeg.offsetWidth / 2;
+  const borderTop = mouseY - flyttmeg.offsetHeight / 2;
+
+  if (borderLeft >= 0 && borderLeft + flyttmeg.offsetWidth <= viewportWidth) {
+    flyttmeg.style.left = borderLeft + "px";
+  }
+  if (borderTop >= 0 && borderTop + flyttmeg.offsetHeight <= viewportHeight) {
+    flyttmeg.style.top = borderTop + "px";
+  }
 });
