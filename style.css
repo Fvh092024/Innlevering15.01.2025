@@ -45,7 +45,7 @@ html {
 .tetris-piece-o-shape {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  top: 55%;
+  top: 60%;
   left: 25%;
 }
 
@@ -53,7 +53,7 @@ html {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
 
-  top: 80%;
+  top: 83%;
   left: 80%;
 }
 
@@ -62,14 +62,14 @@ html {
   grid-template-rows: 1fr 1fr;
 
   top: 20%;
-  left: 90%;
+  left: 77%;
 }
 
 .tetris-piece-s-shape {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   top: 60%;
-  left: 90%;
+  left: 85%;
 }
 
 .tetris-piece-z-shape {
