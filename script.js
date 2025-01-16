@@ -370,12 +370,14 @@ function tetLCollisionCheck(newTop, newLeft) {
   let tetLHeight = tetL.offsetHeight;
 
   const collidesWithTopRow =
+    newTop + movableHeight > tetLTop &&
     newTop < tetLTop + tetLHeight / 2 &&
-    newLeft < tetLLeft + tetLWidth &&
-    newLeft + movableWidth > tetLLeft;
+    newLeft + movableWidth > tetLLeft &&
+    newLeft < tetLLeft + tetLWidth;
 
   const collidesWithBottomLeft =
     newTop + movableHeight > tetLTop + tetLHeight / 2 &&
+    newTop < tetLTop + tetLHeight &&
     newLeft < tetLLeft + tetLWidth / 2 &&
     newLeft + movableWidth > tetLLeft;
 
